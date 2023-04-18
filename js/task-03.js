@@ -17,10 +17,14 @@ const galleryRef = document.querySelector(`.gallery`);
 
 const mass = [];
 images.forEach((element) => {
-  mass.push(`<li class='t3-image'> <img src='${element.url}' alt='${element.alt}'>  </li>`);
+  mass.push(`<li class='item'> <img src='${element.url}' alt='${element.alt}'>  </li>`);
 });
 
 galleryRef.insertAdjacentHTML("afterbegin", mass.join(""));
 galleryRef.style.display = "flex"
-galleryRef.style.flexWrap = "wrap"
 galleryRef.style.listStyleType = "none"
+const imagesEl = galleryRef.querySelectorAll('.item img')
+imagesEl.forEach(element => {
+  element.style.maxWidth = '95%'
+  element.style.maxHeight = '400px'
+})
