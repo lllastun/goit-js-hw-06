@@ -5,11 +5,12 @@ function getRandomHexColor() {
 }
 
 function createBoxes(amount) {
+  const countBefore = document.getElementsByClassName('divChild').length;
   for (let i = 0; i < amount; i += 1) {
     const currentDiv = document.createElement("div");
     currentDiv.className = 'divChild';
-    currentDiv.style.width = `${30 + 10 * i}px`;
-    currentDiv.style.height = `${30 + 10 * i}px`;
+    currentDiv.style.width = `${30 + 10 * (i + countBefore)}px`;
+    currentDiv.style.height = `${30 + 10 * (i + countBefore)}px`;
     currentDiv.style.backgroundColor = getRandomHexColor();
     divMainEl.append(currentDiv);
   }
